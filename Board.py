@@ -229,7 +229,8 @@ class Board:
         self.availablePositions.clear()
         self.moves.clear()
         self.create_avaiable_positions()
-
+    
+    #Create avaiable positions
     def create_avaiable_positions(self):
         for i in range(self.width):
             for j in range(self.height):
