@@ -1,4 +1,5 @@
 import time
+import copy
 from enum import Enum
 
 from Position import Position 
@@ -10,7 +11,7 @@ class Minimax:
     MIN_INT  = -2147483648
     
     debug = False
-    check_move_opponent = False
+    check_move_opponent = True
     
     class Turn(Enum):
         IA = True,
@@ -177,7 +178,7 @@ class Minimax:
         if (self.debug):
             print("CHECKING THE MOVEMENT OF OPPONENT")            
                     
-        boardCopy = board.copy()
+        boardCopy = copy.deepcopy(board)
         #boardCopy.set_board(board)
         positionOpponent = None
         winner = False
