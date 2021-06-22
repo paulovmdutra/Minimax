@@ -40,7 +40,7 @@ class Board:
 
     # Class Constructor
     def __init__(self):
-        self.create_avaiable_positions()
+        self.create_available_positions()
 
     # Generate a random move and return the position    
     def random_move(self):
@@ -228,10 +228,10 @@ class Board:
         self.is_winner = False
         self.availablePositions.clear()
         self.moves.clear()
-        self.create_avaiable_positions()
+        self.create_available_positions()
     
     #Create avaiable positions
-    def create_avaiable_positions(self):
+    def create_available_positions(self):
         for i in range(self.width):
             for j in range(self.height):
                 pos = Position(i, j)
