@@ -14,8 +14,7 @@ class Board:
         CONTINUE = 2
         
         def __str__(self):
-           return format(self.value)                            
-                
+           return format(self.value)                                            
         
         def __int__(self):
             return self.value
