@@ -5,6 +5,7 @@ from enum import Enum
 from Position import Position 
 from Board import Board
 
+#Minimax class
 class Minimax:
     
     MAX_INT  = 2147483648
