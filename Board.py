@@ -58,9 +58,7 @@ class Board:
             self.currentMark = self.Mark.O            
         else:
             self.turnToPlayer = self.State.IA
-            self.currentMark = self.Mark.X            
-        
-        #print("Troucou de jogador: " + str(self.turnToPlayer))
+            self.currentMark = self.Mark.X
 
     def get_current_mark(self):
 	    return self.currentMark
@@ -179,7 +177,6 @@ class Board:
             state = self.State.DRAW            
         
         return state
-    
 
 	# Checks if has a winner
     def has_winner(self):
@@ -220,18 +217,18 @@ class Board:
         self.state = state
         return self.state
 
-    def clear(self):
-    	self.board = [[0, 0, 0],
-                      [0, 0, 0],
-                      [0, 0, 0],
-                   ]
-    
-    	self.turnToPlayer = self.State.IA
-    	self.currentMark = self.Mark.X
-    	self.is_winner = False
-    	self.availablePositions.clear()
-    	self.moves.clear()
-    	self.create_avaiable_positions()
+    #Reset the board
+    def reset(self):
+        self.board = [[self.Mark.EMPTY, self.Mark.EMPTY, self.Mark.EMPTY],
+                      [self.Mark.EMPTY, self.Mark.EMPTY, self.Mark.EMPTY],
+                      [self.Mark.EMPTY, self.Mark.EMPTY, self.Mark.EMPTY],
+                      ]
+        self.turnToPlayer = self.State.IA
+        self.currentMark = self.Mark.X
+        self.is_winner = False
+        self.availablePositions.clear()
+        self.moves.clear()
+        self.create_avaiable_positions()
 
     def create_avaiable_positions(self):
         for i in range(self.width):
@@ -243,10 +240,6 @@ class Board:
     def equals_value(self, a, b, c):
         val = ((a != self.Mark.EMPTY) and (a == b) and (b == c) and (b == c))
         return val
-    
-	# Return if the game has a winner
-    #def is_winner(self):
-     #   return self.is_winner
 
 	# Get the turn to player
     def get_turn_to_player(self):
